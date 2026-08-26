@@ -12,6 +12,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Windows;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
@@ -62,6 +64,13 @@ namespace PasswordGeneratorApp
             }
             Debug.WriteLine("Password is: " + genPassword);
             ViewModel.ChangePassword(genPassword);
+        }
+
+        private void CopyText_Click(object sender, RoutedEventArgs args)
+        {
+            var package = new DataPackage();
+            package.SetText(ViewModel.Password);
+            Clipboard.SetContent(package);
         }
     }
 }

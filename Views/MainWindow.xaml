@@ -7,7 +7,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Title="PasswordGeneratorApp">
+    Title="PasswordGeneratorApp"
+    
+    >
 
     <Window.SystemBackdrop>
         <MicaBackdrop />
@@ -17,7 +19,10 @@
         <TextBlock Text="Password Generator" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" />
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Spacing="20"> 
             <Button Content="Generate Password" Click="GeneratePassword_Click" Width="200" />
-            <TextBox x:Name="PasswordTextBox" Width="200" Text="{x:Bind ViewModel.Password, Mode=OneWay}" IsReadOnly="True" />
+            <TextBlock x:Name="PasswordTextBox" Width="150" Text="{x:Bind ViewModel.Password, Mode=OneWay}" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Click="CopyText_Click">
+                <FontIcon Glyph="&#xE8C8;" FontSize="16" />
+            </Button>
         </StackPanel>
     </StackPanel>
 </Window>
