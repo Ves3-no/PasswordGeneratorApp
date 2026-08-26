@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="PasswordGeneratorApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PasswordGeneratorApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="PasswordGeneratorApp">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20" Spacing="30">
+        <TextBlock Text="Password Generator" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" />
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Spacing="20"> 
+            <Button Content="Generate Password" Click="GeneratePassword_Click" Width="200" />
+            <TextBox x:Name="PasswordTextBox" Width="200" Text="{x:Bind ViewModel.Password, Mode=OneWay}" IsReadOnly="True" />
+        </StackPanel>
+    </StackPanel>
+</Window>

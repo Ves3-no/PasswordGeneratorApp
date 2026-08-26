@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PasswordGeneratorApp (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "PasswordGeneratorApp (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
